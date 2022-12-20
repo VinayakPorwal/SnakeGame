@@ -15,7 +15,7 @@
   height: 75vmin;
   width: 75vmin;
   display: grid;
-  margin: auto;
+  margin-top: auto;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
   background-color: azure;
@@ -61,4 +61,14 @@ float:right;
 #controls{
   display: flex;
   margin: auto;
+}
+
+
+@media only screen and (min-width: 500px) {
+  .hidecont{
+    display: none;
+  }
+  #hidecont2{
+    display: none;
+  }
 }

@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { useInterval } from "./useInterval";
 import Typography from "@mui/material/Typography";
 import img from "./egg-solid.svg";
+import Controls from "./Controls";
 // import Snake from "./Snake";
 // import Food from "./Food";
 function App() {
@@ -84,14 +85,14 @@ function App() {
         return true;
       }
     }
-    
+
     // Wall collision
     if (
       newsnake[0][0] >= 21 ||
       newsnake[0][0] <= 0 ||
       newsnake[0][1] >= 21 ||
       newsnake[0][1] <= 0
-      ) {
+    ) {
       return true;
     }
 
@@ -103,7 +104,7 @@ function App() {
     moveSnake();
     CheckEat();
     if (collision() === true) {
-      setGameOver("Game-Over")
+      setGameOver("Game-Over");
       setSpeed(null);
       scorecard.style.fontSize = "30px";
       setSnakeEyes("* *");
@@ -112,7 +113,7 @@ function App() {
 
   // Control Buttons
   const play = () => {
-    if (gameOver != null ) {
+    if (gameOver != null) {
       setScore(0);
       setSnake(SNAKE_START);
       setFood(APPLE_START);
@@ -135,6 +136,18 @@ function App() {
     scorecard.style.fontSize = "1rem";
   };
 
+  const up = () => {
+    setDir([0, -1]);
+  };
+  const down = () => {
+    setDir([0, 1]);
+  };
+  const left = () => {
+    setDir([-1, 0]);
+  };
+  const right = () => {
+    setDir([1, 0]);
+  };
   // Run Game
   useInterval(() => gameLoop(), speed);
 
@@ -172,7 +185,7 @@ function App() {
         </div>
         {/* <Food food={food} /> */}
       </div>
-
+      <Controls  up={up} down={down} left={left} right={right} />
       <div id="controls">
         <Button
           variant="contained"
