@@ -22,9 +22,20 @@
   border: 1px solid;
   border-radius: 5px;
 }
+#egg{
+  height: 22px;
+  width: 22px;
+}
 
 .food{
-  background-color: chocolate;
+  color: rgb(168, 109, 68);
+  z-index: 0;
+  /* size: 2px; */
+  animation: pulse 0.7s ease-in infinite;
+}
+@keyframes pulse{
+  25%  {transform: scale(0.8);}
+  75%  {transform: scale(0.9);}
 }
 .snake{
   background-color: gold;
@@ -35,6 +46,7 @@
   background-color: red;
   border-radius: 8px;
   border: 1px solid;
+  z-index: 1;
   
 }
 #startbtn{

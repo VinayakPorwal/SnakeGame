@@ -1,8 +1,9 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useInterval } from "./useInterval";
+import Typography from "@mui/material/Typography";
+import img from "./egg-solid.svg";
 // import Snake from "./Snake";
 // import Food from "./Food";
 function App() {
@@ -104,7 +105,7 @@ function App() {
       setGameOver("Game-Over");
       setSpeed(null);
       scorecard.style.fontSize = "30px";
-      setSnakeEyes("* *")
+      setSnakeEyes("* *");
     }
   };
 
@@ -115,7 +116,7 @@ function App() {
       setSnake(SNAKE_START);
       setFood(APPLE_START);
       setGameOver(null);
-      setSnakeEyes("••"); 
+      setSnakeEyes("••");
       scorecard.style.fontSize = "1rem";
     }
     setSpeed(100);
@@ -125,8 +126,8 @@ function App() {
   };
   const reset = () => {
     setSpeed(null);
-    setSnake(SNAKE_START); 
-    setSnakeEyes("••"); 
+    setSnake(SNAKE_START);
+    setSnakeEyes("••");
     setFood(APPLE_START);
     setScore(0);
     setGameOver(null);
@@ -142,11 +143,6 @@ function App() {
     gridRowStart: food[1],
   };
 
-
-  //Snake eyes 
-  //snake head rotation
-
-
   return (
     <div className="App">
       <Typography>Play Snake Game</Typography>
@@ -160,15 +156,22 @@ function App() {
             gridRowStart: e[1],
           };
           if (i === 0) {
-            return <div className="head" style={style} key={i}>{snakeEyes}</div>;
+            return (
+              <div className="head" style={style} key={i}>
+                {snakeEyes}
+              </div>
+            );
           } else {
             return <div className="snake" style={style} key={i}></div>;
           }
         })}
         {/* <Snake snake={SNAKE_START} /> */}
-        <div className="food" style={foodstyle}></div>
+        <div className="food" style={foodstyle}>
+          <img id="egg" src={img} alt="food" />
+        </div>
         {/* <Food food={food} /> */}
       </div>
+
       <div id="controls">
         <Button
           variant="contained"
