@@ -1,6 +1,6 @@
 {
-  "homepage": "https://vinayakporwal.github.io/WeatherApp/",
-  "name": "weather",
+  "homepage": "https://vinayakporwal.github.io/SnakeGame/",
+  "name": "snakegame",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
