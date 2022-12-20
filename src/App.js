@@ -84,15 +84,16 @@ function App() {
         return true;
       }
     }
-
+    
     // Wall collision
     if (
       newsnake[0][0] >= 21 ||
       newsnake[0][0] <= 0 ||
       newsnake[0][1] >= 21 ||
       newsnake[0][1] <= 0
-    )
+      ) {
       return true;
+    }
 
     return false;
   };
@@ -102,7 +103,7 @@ function App() {
     moveSnake();
     CheckEat();
     if (collision() === true) {
-      setGameOver("Game-Over");
+      setGameOver("Game-Over")
       setSpeed(null);
       scorecard.style.fontSize = "30px";
       setSnakeEyes("* *");
@@ -111,7 +112,7 @@ function App() {
 
   // Control Buttons
   const play = () => {
-    if (collision() === true) {
+    if (gameOver != null ) {
       setScore(0);
       setSnake(SNAKE_START);
       setFood(APPLE_START);
