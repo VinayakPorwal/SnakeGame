@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/SnakeGame/static/css/main.0fc7105c.css",
+    "main.js": "/SnakeGame/static/js/main.bd70c66c.js",
+    "index.html": "/SnakeGame/index.html",
+    "static/media/egg-solid.svg": "/SnakeGame/static/media/egg-solid.273009a330e5717197477c655ac5f2fe.svg",
+    "main.0fc7105c.css.map": "/SnakeGame/static/css/main.0fc7105c.css.map",
+    "main.bd70c66c.js.map": "/SnakeGame/static/js/main.bd70c66c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0fc7105c.css",
+    "static/js/main.bd70c66c.js"
+  ]
+}
